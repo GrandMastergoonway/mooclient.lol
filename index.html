@@ -17,13 +17,13 @@
                 Your browser does not support HTML5 video.
             </video>
             <div class="content">
-                <img src="/img/logo.png" class="logo">
+                <img src="/img/logo.png" class="logo" alt="Logo">
                 <p class="enhance-text">Enhance your Gorilla Tag Modding Experience.</p>
                 <div class="download-buttons">
-                    <a href="/menu.html" class="download-button">
+                    <a href="/downloads/MooClient.dll" class="download-button" download="MooClient.dll">
                         <i class="fas fa-download"></i> Download Menu
                     </a>
-                    <a href="/template.html" class="download-button">
+                    <a href="/downloads/MooTemplate.zip" class="download-button" download="MooTemplate.zip">
                         <i class="fas fa-download"></i> Download Template
                     </a>
                 </div>
@@ -97,40 +97,23 @@
     </main>
 
     <script>
-        document.querySelectorAll('.accordion-button').forEach(button => {
-            button.addEventListener('click', () => {
-                const accordionContent = button.nextElementSibling;
-                if (accordionContent.style.maxHeight) {
-                    accordionContent.style.maxHeight = null;
-                    accordionContent.style.opacity = 0;
-                    button.classList.remove('active');
-                } else {
-                    document.querySelectorAll('.accordion-content').forEach(content => {
-                        content.style.maxHeight = null;
-                        content.style.opacity = 0;
-                    });
-                    document.querySelectorAll('.accordion-button').forEach(btn => {
-                        btn.classList.remove('active');
-                    });
-                    accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
-                    accordionContent.style.opacity = 1;
-                    button.classList.add('active');
+        document.querySelectorAll('a').forEach(anchor => {
+       
+            anchor.addEventListener('click', function(e) {
+                if (this.hasAttribute('download')) {
+                    return; 
                 }
+              
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
 
         window.addEventListener('load', () => {
             const logo = document.querySelector('.logo');
             logo.classList.add('bounce');
-        });
-
-        document.querySelectorAll('a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
         });
     </script>
 </body>
