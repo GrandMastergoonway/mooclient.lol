@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moo Client</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+</head>
+<body>
+    <main>
+        <section class="download-section">
+            <video autoplay muted loop playsinline class="background-video">
+                <source src="https://cdn.discordapp.com/attachments/1217444496984379452/1264155762834538556/intro.mp4?ex=669cd84c&is=669b86cc&hm=2ec8b1fb13a4fc0a425e2d5502fceb341ad6f82cf6b5590660073d26819bb52c&" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+            <div class="content">
+                <img src="/img/logo.png" class="logo">
+                <p class="enhance-text">Enhance your Gorilla Tag Modding Experience.</p>
+                <div class="download-buttons">
+                    <a href="/menu.html" class="download-button">
+                        <i class="fas fa-download"></i> Download Menu
+                    </a>
+                    <a href="/template.html" class="download-button">
+                        <i class="fas fa-download"></i> Download Template
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="reasons-section">
+            <h2>Why Download Moo Client?</h2>
+            <ul>
+                <li><i class="fas fa-star"></i> Enhance your gameplay with advanced features.</li>
+                <li><i class="fas fa-check"></i> Easy to install and use.</li>
+                <li><i class="fas fa-sync"></i> Regular updates and new cheats.</li>
+                <li><i class="fas fa-lock"></i> Safe and secure.</li>
+            </ul>
+        </section>
+
+        <section class="reviews-section">
+            <h2>What People Are Saying?</h2>
+            <div class="reviews-videos">
+                <div class="video-placeholder">
+                    <video controls>
+                        <source src="https://cdn.discordapp.com/attachments/1217444496984379452/1264155759214727188/dynamic.mp4?ex=669cd84b&is=669b86cb&hm=ad2287e6e5f8e347196cd80974295bfc52f710bda3fb5890df99479b8556b105&" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
+                    <p>By DynamicGaming295</p>
+                </div>
+                <div class="video-placeholder">
+                    <iframe src="https://www.youtube.com/embed/uch-keo1xgE?si=rCLRshqk4N5vC7LZ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p>By Max Menus</p>
+                </div>
+                <div class="video-placeholder">
+                    <iframe src="https://www.youtube.com/embed/Bympp77JaMA?si=RuJpbwO5UyXjC9qk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p>By GuardianGT</p>
+                </div>
+                <div class="video-placeholder">
+                    <iframe src="https://www.youtube.com/embed/uhnizQzU5j4?si=ZnA4Ez6KeMTNUc6m" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p>By FrostGT</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="questions-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-button">
+                        <i class="fas fa-question-circle"></i> What is Moo Client?
+                    </button>
+                    <div class="accordion-content">
+                        <p>Moo Client is a tool designed to enhance your Gorilla Tag gameplay with advanced features and cheats.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button">
+                        <i class="fas fa-question-circle"></i> Is Moo Client safe to use?
+                    </button>
+                    <div class="accordion-content">
+                        <p>Yes, Moo Client is designed with safety in mind. It is regularly updated to ensure nothing is broken and Mods are Undetected!</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button">
+                        <i class="fas fa-question-circle"></i> How do I install Moo Client?
+                    </button>
+                    <div class="accordion-content">
+                        <iframe src="https://www.youtube.com/embed/bKIoM5uUYZo?si=PWCd_hFVXglmV4yI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.querySelectorAll('.accordion-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const accordionContent = button.nextElementSibling;
+                if (accordionContent.style.maxHeight) {
+                    accordionContent.style.maxHeight = null;
+                    accordionContent.style.opacity = 0;
+                    button.classList.remove('active');
+                } else {
+                    document.querySelectorAll('.accordion-content').forEach(content => {
+                        content.style.maxHeight = null;
+                        content.style.opacity = 0;
+                    });
+                    document.querySelectorAll('.accordion-button').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+                    accordionContent.style.opacity = 1;
+                    button.classList.add('active');
+                }
+            });
+        });
+
+        window.addEventListener('load', () => {
+            const logo = document.querySelector('.logo');
+            logo.classList.add('bounce');
+        });
+
+        document.querySelectorAll('a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
