@@ -97,40 +97,23 @@
     </main>
 
     <script>
-        document.querySelectorAll('.accordion-button').forEach(button => {
-            button.addEventListener('click', () => {
-                const accordionContent = button.nextElementSibling;
-                if (accordionContent.style.maxHeight) {
-                    accordionContent.style.maxHeight = null;
-                    accordionContent.style.opacity = 0;
-                    button.classList.remove('active');
-                } else {
-                    document.querySelectorAll('.accordion-content').forEach(content => {
-                        content.style.maxHeight = null;
-                        content.style.opacity = 0;
-                    });
-                    document.querySelectorAll('.accordion-button').forEach(btn => {
-                        btn.classList.remove('active');
-                    });
-                    accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
-                    accordionContent.style.opacity = 1;
-                    button.classList.add('active');
+        document.querySelectorAll('a').forEach(anchor => {
+            
+            anchor.addEventListener('click', function(e) {
+                if (this.hasAttribute('download')) {
+                    return; 
                 }
+          
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
 
         window.addEventListener('load', () => {
             const logo = document.querySelector('.logo');
             logo.classList.add('bounce');
-        });
-
-        document.querySelectorAll('a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
         });
     </script>
 </body>
