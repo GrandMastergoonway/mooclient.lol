@@ -1,0 +1,56 @@
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.glow {
+    font-size: 3em;
+    color: white;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.8),
+                 0 0 40px rgba(255, 255, 255, 0.7),
+                 0 0 50px rgba(255, 255, 255, 0.6),
+                 0 0 0px rgba(255, 255, 255, 0.5);
+}
+
+.smoltext {
+    font-size: 16px;
+}
+
+.button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #7b7b7c;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.button:hover {
+    background-color: #a0a0a0;
+}
+
+.decorative-dot {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 1;
+    transition: opacity 2s ease-out;
+}
+
+.fade-out {
+    opacity: 0;
+}
