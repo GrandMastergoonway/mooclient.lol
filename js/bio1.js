@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setInterval(createDot, 100);
 
-    const title = "@monkeydestroyer87";
+    const title = "Orable4";
     let index = 0;
     let addingText = true;
 
