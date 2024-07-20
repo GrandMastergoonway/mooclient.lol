@@ -10,6 +10,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 @keyframes gradientAnimation {
@@ -18,13 +20,24 @@ body {
     100% { background-position: 0% 50%; }
 }
 
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
 main {
     flex: 1;
-    padding: 40px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .download-section {
@@ -33,14 +46,74 @@ main {
     background: rgba(0, 0, 0, 0.6);
     padding: 30px;
     border-radius: 10px;
-    max-width: 800px;
     width: 100%;
+    max-width: 100%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.right-content {
+    flex: 2;
+    padding: 20px;
+}
+
+.download-section p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    position: relative;
+    color: white;
+    text-shadow: 
+        -1px -1px 0 #33a8ff,  
+        1px -1px 0 #33a8ff, 
+        -1px 1px 0 #33a8ff, 
+        1px 1px 0 #33a8ff;
+}
+
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 55vh;
+    object-fit: cover;
+    filter: blur(15px);
+    z-index: 1;
+}
+
+.download-section .content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
 }
 
 .download-section .logo {
     height: auto;
     margin-bottom: 20px;
+    animation: bounce 2s;
+    max-width: 80%;
 }
 
 .download-section p {
@@ -67,7 +140,7 @@ main {
     display: flex;
     align-items: center;
     gap: 10px;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .download-button i {
@@ -76,6 +149,7 @@ main {
 
 .download-button:hover {
     background: #005b96;
+    transform: scale(1.1);
 }
 
 .reasons-section {
@@ -184,4 +258,77 @@ main {
     transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 0 0 5px 5px;
+}
+
+.reviews-section {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 1200px;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 0 auto 40px;
+}
+
+.reviews-section h2 {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.reviews-videos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-placeholder {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.video-placeholder iframe,
+.video-placeholder video {
+    width: 100%;
+    height: 315px;
+    border: none;
+}
+
+.video-placeholder p {
+    color: white;
+    padding: 10px;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #004370;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #33a8ff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #005b96;
 }

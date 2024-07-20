@@ -12,17 +12,24 @@
 <body>
     <main>
         <section class="download-section">
-            <img src="/img/logo.png" class="logo">
-            <p>Enhance your Gorilla Tag Modding Experience.</p>
-            <div class="download-buttons">
-                <a href="/menu.html" class="download-button">
-                    <i class="fas fa-download"></i> Download Menu
-                </a>
-                <a href="/template.html" class="download-button">
-                    <i class="fas fa-download"></i> Download Template
-                </a>
+            <video autoplay muted loop playsinline class="background-video">
+                <source src="/vids/intro.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+            <div class="content">
+                <img src="/img/logo.png" class="logo">
+                <p class="enhance-text">Enhance your Gorilla Tag Modding Experience.</p>
+                <div class="download-buttons">
+                    <a href="/menu.html" class="download-button">
+                        <i class="fas fa-download"></i> Download Menu
+                    </a>
+                    <a href="/template.html" class="download-button">
+                        <i class="fas fa-download"></i> Download Template
+                    </a>
+                </div>
             </div>
         </section>
+        
         <section class="reasons-section">
             <h2>Why Download Moo Client?</h2>
             <ul>
@@ -32,6 +39,32 @@
                 <li><i class="fas fa-lock"></i> Safe and secure.</li>
             </ul>
         </section>
+
+        <section class="reviews-section">
+            <h2>What People Are Saying?</h2>
+            <div class="reviews-videos">
+                <div class="video-placeholder">
+                    <video controls>
+                        <source src="/vids/dynamic.mp4" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
+                    <p>By DynamicGaming295</p>
+                </div>
+                <div class="video-placeholder">
+                    <iframe src="https://www.youtube.com/embed/uch-keo1xgE?si=rCLRshqk4N5vC7LZ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p>By Max Menus</p>
+                </div>
+                <div class="video-placeholder">
+                    <iframe src="https://www.youtube.com/embed/Bympp77JaMA?si=RuJpbwO5UyXjC9qk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p>By GuardianGT</p>
+                </div>
+                <div class="video-placeholder">
+                    <iframe src="https://www.youtube.com/embed/uhnizQzU5j4?si=ZnA4Ez6KeMTNUc6m" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p>By FrostGT</p>
+                </div>
+            </div>
+        </section>
+
         <section class="questions-section">
             <h2>Frequently Asked Questions</h2>
             <div class="accordion">
@@ -56,7 +89,7 @@
                         <i class="fas fa-question-circle"></i> How do I install Moo Client?
                     </button>
                     <div class="accordion-content">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/bKIoM5uUYZo?si=PWCd_hFVXglmV4yI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/bKIoM5uUYZo?si=PWCd_hFVXglmV4yI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -83,6 +116,20 @@
                     accordionContent.style.opacity = 1;
                     button.classList.add('active');
                 }
+            });
+        });
+
+        window.addEventListener('load', () => {
+            const logo = document.querySelector('.logo');
+            logo.classList.add('bounce');
+        });
+
+        document.querySelectorAll('a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
     </script>
