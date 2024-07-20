@@ -17,13 +17,13 @@
                 Your browser does not support HTML5 video.
             </video>
             <div class="content">
-                <img src="/img/logo.png" class="logo" alt="Logo">
+                <img src="/img/logo.png" class="logo">
                 <p class="enhance-text">Enhance your Gorilla Tag Modding Experience.</p>
                 <div class="download-buttons">
-                    <a href="/downloads/MooClient.dll" class="download-button" download="MooClient.dll">
+                    <a href="https://mooclient.lol/menu" class="download-button">
                         <i class="fas fa-download"></i> Download Menu
                     </a>
-                    <a href="/downloads/MooTemplate.zip" class="download-button" download="MooTemplate.zip">
+                    <a href="https://mooclient.lol/template" class="download-button">
                         <i class="fas fa-download"></i> Download Template
                     </a>
                 </div>
@@ -44,8 +44,8 @@
             <h2>What People Are Saying?</h2>
             <div class="reviews-videos">
                 <div class="video-placeholder">
-                    <video controls>
-                        <source src="https://cdn.discordapp.com/attachments/1217444496984379452/1264155759214727188/dynamic.mp4?ex=669cd84b&is=669b86cb&hm=ad2287e6e5f8e347196cd80974295bfc52f710bda3fb5890df99479b8556b105&" type="video/mp4">
+                    <video controls="">
+                        <source src="https://cdn.discordapp.com/attachments/1217444496984379452/1264155759214727188/dynamic.mp4?ex=669cd84b&amp;is=669b86cb&amp;hm=ad2287e6e5f8e347196cd80974295bfc52f710bda3fb5890df99479b8556b105&amp;" type="video/mp4">
                         Your browser does not support HTML5 video.
                     </video>
                     <p>By DynamicGaming295</p>
@@ -97,24 +97,49 @@
     </main>
 
     <script>
-        document.querySelectorAll('a').forEach(anchor => {
-            
-            anchor.addEventListener('click', function(e) {
-                if (this.hasAttribute('download')) {
-                    return; 
-                }
-          
+    document.querySelectorAll('a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (!href.startsWith('http') && !this.hasAttribute('download')) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                document.querySelector(href).scrollIntoView({
                     behavior: 'smooth'
                 });
-            });
+            }
         });
+    });
 
-        window.addEventListener('load', () => {
-            const logo = document.querySelector('.logo');
-            logo.classList.add('bounce');
+    window.addEventListener('load', () => {
+        const logo = document.querySelector('.logo');
+        logo.classList.add('bounce');
+    });
+
+    document.querySelectorAll('.accordion-button').forEach(button => {
+        button.addEventListener('click', () => {
+            const accordionContent = button.nextElementSibling;
+            if (accordionContent.style.maxHeight) {
+                accordionContent.style.maxHeight = null;
+                accordionContent.style.opacity = 0;
+                button.classList.remove('active');
+            } else {
+                document.querySelectorAll('.accordion-content').forEach(content => {
+                    content.style.maxHeight = null;
+                    content.style.opacity = 0;
+                });
+                document.querySelectorAll('.accordion-button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+                accordionContent.style.opacity = 1;
+                button.classList.add('active');
+            }
         });
+    });
+
+    window.addEventListener('load', () => {
+        const logo = document.querySelector('.logo');
+        logo.classList.add('bounce');
+    });
     </script>
 </body>
 </html>
