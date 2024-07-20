@@ -1,4 +1,5 @@
-const title = "@Guilded.lol";
+const title = "moo client
+    ";
 let index = 0;
 let addingText = true;
 
