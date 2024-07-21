@@ -3,7 +3,7 @@
 body {
     background: linear-gradient(270deg, #005b96, #33a8ff, #005b96, #33a8ff);
     background-size: 800% 800%;
-    animation: gradientAnimation 15s ease infinite;
+    animation: gradient 15s ease infinite;
     font-family: 'Roboto', sans-serif;
     color: white;
     margin: 0;
@@ -14,7 +14,7 @@ body {
     overflow-x: hidden;
 }
 
-@keyframes gradientAnimation {
+@keyframes gradient {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
@@ -38,17 +38,16 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    padding: 20px;
 }
 
 .download-section {
     text-align: center;
     margin-bottom: 40px;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 30px;
-    border-radius: 10px;
+    padding: 40px;
+    border-radius: 15px;
     width: 100%;
-    max-width: 100%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
     height: 50vh;
     display: flex;
     flex-direction: column;
@@ -86,7 +85,6 @@ main {
         1px 1px 0 #33a8ff;
 }
 
-
 .background-video {
     position: absolute;
     top: 0;
@@ -112,19 +110,15 @@ main {
 .download-section .logo {
     height: auto;
     margin-bottom: 20px;
-    animation: bounce 2s;
+    animation: bounce 2s infinite;
     max-width: 80%;
-}
-
-.download-section p {
-    font-size: 1.5em;
-    margin-bottom: 20px;
 }
 
 .download-buttons {
     display: flex;
     gap: 20px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .download-button {
@@ -134,13 +128,13 @@ main {
     font-size: 1.2em;
     font-weight: 700;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     text-decoration: none;
     display: flex;
     align-items: center;
     gap: 10px;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .download-button i {
@@ -154,13 +148,29 @@ main {
 
 .reasons-section {
     background: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    padding: 30px;
+    border-radius: 15px;
+    padding: 40px;
     max-width: 800px;
     width: 100%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
     margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 100px;
+}
+
+.reviews-section {
+    position: relative;
+    padding-bottom: 100px;
+}
+
+.bottom-right-image {
+    position: absolute;
+    bottom: 0px;
+    right: 20px;
+    width: 260px;
+    height: auto;
+    border-radius: 15px;
 }
 
 .reasons-section h2 {
@@ -179,7 +189,7 @@ main {
     background: rgba(255, 255, 255, 0.1);
     margin: 10px 0;
     padding: 15px;
-    border-radius: 5px;
+    border-radius: 10px;
     text-align: center;
     font-weight: 400;
     transition: transform 0.3s, background 0.3s;
@@ -198,12 +208,12 @@ main {
 }
 
 .questions-section {
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
-    padding: 30px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 40px;
     max-width: 800px;
     width: 100%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
     margin-bottom: 40px;
 }
@@ -223,11 +233,11 @@ main {
 
 .accordion-item {
     background: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .accordion-button {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.8);
     color: white;
     border: none;
     padding: 15px;
@@ -235,7 +245,7 @@ main {
     text-align: left;
     font-size: 1.2em;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -257,16 +267,16 @@ main {
     padding: 0 15px;
     transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 0 0 5px 5px;
+    border-radius: 0 0 10px 10px;
 }
 
 .reviews-section {
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 30px;
+    border-radius: 15px;
+    padding: 40px;
     max-width: 1200px;
     width: 100%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
     margin: 0 auto 40px;
 }
@@ -280,8 +290,7 @@ main {
 
 .reviews-videos {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     justify-content: center;
     align-items: center;
@@ -292,7 +301,7 @@ main {
     border-radius: 10px;
     overflow: hidden;
     position: relative;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
 
 .video-placeholder iframe,
@@ -315,6 +324,96 @@ main {
     font-weight: 600;
 }
 
+.features-section {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 1200px;
+    width: 100%;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    margin: 0 auto 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.features-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+.features-text {
+    flex: 1;
+    padding: 20px;
+    color: white;
+    text-shadow: 
+        -1px -1px 0 #33a8ff,  
+        1px -1px 0 #33a8ff, 
+        -1px 1px 0 #33a8ff, 
+        1px 1px 0 #33a8ff;
+}
+
+.features-text h2 {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.features-text p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.features-text ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 10px 0 0 0;
+}
+
+.features-text ul li {
+    font-size: 1.1em;
+    color: white;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.features-text ul li i {
+    margin-right: 10px;
+    color: #ffffff;
+    font-size: 1.5em;
+}
+
+.features-image {
+    flex: 1;
+    text-align: center;
+}
+
+.features-image img {
+    max-width: 81%;
+    max-height: 600px;
+    border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+    .features-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .features-text, .features-image {
+        flex: unset;
+        width: 100%;
+    }
+}
+
+
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -325,7 +424,7 @@ main {
 
 ::-webkit-scrollbar-thumb {
     background: #33a8ff;
-    border-radius: 5px;
+    border-radius: 10px;
     transition: background-color 0.3s ease;
 }
 

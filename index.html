@@ -13,12 +13,12 @@
     <main>
         <section class="download-section">
             <video autoplay muted loop playsinline class="background-video">
-                <source src="https://cdn.discordapp.com/attachments/1217444496984379452/1264155762834538556/intro.mp4?ex=669cd84c&is=669b86cc&hm=2ec8b1fb13a4fc0a425e2d5502fceb341ad6f82cf6b5590660073d26819bb52c&" type="video/mp4">
+                <source src="/img/edit.mp4" type="video/mp4">
                 Your browser does not support HTML5 video.
             </video>
             <div class="content">
                 <img src="/img/logo.png" class="logo">
-                <p class="enhance-text">Enhance your Gorilla Tag Modding Experience.</p>
+                <p class="enhance-text">This is the only Free Menu you will ever need.</p>
                 <div class="download-buttons">
                     <a href="https://mooclient.lol/menu" class="download-button">
                         <i class="fas fa-download"></i> Download Menu
@@ -30,24 +30,29 @@
             </div>
         </section>
         
-        <section class="reasons-section">
-            <h2>Why Download Moo Client?</h2>
-            <ul>
-                <li><i class="fas fa-star"></i> Enhance your gameplay with advanced features.</li>
-                <li><i class="fas fa-check"></i> Easy to install and use.</li>
-                <li><i class="fas fa-sync"></i> Regular updates and new cheats.</li>
-                <li><i class="fas fa-lock"></i> Safe and secure.</li>
-            </ul>
+        <section class="features-section">
+            <div class="features-content">
+                <div class="features-text">
+                    <h2>Moo Client</h2>
+                    <ul>
+                        <li><i class="fas fa-cogs"></i> Customized mods tailored to your preferences.</li>
+                        <li><i class="fas fa-user-friends"></i> Friendly interface for easy navigation.</li>
+                        <li><i class="fas fa-sync"></i> Weekly updates to ensure Moo Client is Undetected!</li>
+                        <li><i class="fas fa-shield-alt"></i> Safe and Secure Mods to protect your account.</li>
+                    </ul>
+                </div>
+                <div class="features-image">
+                    <img src="/img/menu.png" alt="Moo Client Features">
+                </div>
+            </div>
         </section>
+        
 
         <section class="reviews-section">
-            <h2>What People Are Saying?</h2>
+            <h2>Reviews</h2>
             <div class="reviews-videos">
                 <div class="video-placeholder">
-                    <video controls="">
-                        <source src="https://cdn.discordapp.com/attachments/1217444496984379452/1264155759214727188/dynamic.mp4?ex=669cd84b&amp;is=669b86cb&amp;hm=ad2287e6e5f8e347196cd80974295bfc52f710bda3fb5890df99479b8556b105&amp;" type="video/mp4">
-                        Your browser does not support HTML5 video.
-                    </video>
+                    <iframe src="https://files.catbox.moe/yvux5i.mp4" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; autoplay" allowfullscreen></iframe>
                     <p>By DynamicGaming295</p>
                 </div>
                 <div class="video-placeholder">
@@ -62,8 +67,13 @@
                     <iframe src="https://www.youtube.com/embed/uhnizQzU5j4?si=ZnA4Ez6KeMTNUc6m" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <p>By FrostGT</p>
                 </div>
+                <div class="video-placeholder">
+                    <iframe src="https://www.youtube.com/embed/3gRuCfsfdWI?si=3NxTemHI3TIVLQt4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <p>By ThirteenGT</p>
+                </div>
             </div>
-        </section>
+            <img src="" class="bottom-right-image">
+        </section>        
 
         <section class="questions-section">
             <h2>Frequently Asked Questions</h2>
@@ -136,9 +146,16 @@
         });
     });
 
-    window.addEventListener('load', () => {
-        const logo = document.querySelector('.logo');
-        logo.classList.add('bounce');
+    document.addEventListener("DOMContentLoaded", function() {
+        const images = [
+            "/img/1.png",
+            "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/48d4d968-2139-4e2d-9727-adf476d01ce3/dfy2vgp-5906758c-8a96-4b0a-8365-80caa7b2f4eb.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzQ4ZDRkOTY4LTIxMzktNGUyZC05NzI3LWFkZjQ3NmQwMWNlM1wvZGZ5MnZncC01OTA2NzU4Yy04YTk2LTRiMGEtODM2NS04MGNhYTdiMmY0ZWIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.XhRJUck9ur5JvmRLclUsYe9J7Mnzs5JKS3yRcg3NBuw",
+            "/img/2.png",
+            "/img/3.png"
+        ];
+
+        const randomImage = images[Math.floor(Math.random() * images.length)];
+        document.querySelector('.bottom-right-image').src = randomImage;
     });
     </script>
 </body>
